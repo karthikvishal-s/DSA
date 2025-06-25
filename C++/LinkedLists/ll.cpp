@@ -69,6 +69,8 @@ void insert(Node* head,int data,int pos){
 
 
 
+
+
 int main(){
     Node* head = new Node(10);
     head->next = new Node(20);
