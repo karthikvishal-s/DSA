@@ -12,7 +12,7 @@ while len(minheap)>1:
 
     second = heapq.heappop(minheap)
 
-    cost = first+second
+    cost = cost+first+second
  
     heapq.heappush(minheap,first+second)
 
