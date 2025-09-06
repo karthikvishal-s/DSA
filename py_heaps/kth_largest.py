@@ -3,11 +3,11 @@ nums=[3,2,1,5,6,4]
 k=2
 
 
-l=[-n for n in nums]
-heapq.heapify(l)
+max_heap=[-n for n in nums]
+heapq.heapify(max_heap)
 count=1
 while count<k:
-    heapq.heappop(l)
+    heapq.heappop(max_heap)
     count+=1
 
-print(-l[0])
+print(-max_heap[0])
