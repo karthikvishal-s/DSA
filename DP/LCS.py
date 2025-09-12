@@ -24,6 +24,9 @@ print(dp[m][n])
 
 print(dp)
 
+
+# I constructed this backtracking on my own 🔥
+
 def backtrack(s1,s2,dp,m,n):
     res=""
     i,j=m,n
