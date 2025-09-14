@@ -1,6 +1,6 @@
 # Longest Increasing Subsequence
 
-l=[3,4,5,1,2,3,4]
+l=[4,10,4,3,8,9]
 
 # using binary search algorithm
 
@@ -17,10 +17,12 @@ for i in range(1,len(l)):
         while left<right:
 
             mid=(left+right)//2
-            if res[mid]>l[i]:
+            if res[mid]>=l[i]:
                 right=mid
             else:
                 left=mid+1
         res[left]=l[i]
+
+    print(res)
 
 print(len(res))
