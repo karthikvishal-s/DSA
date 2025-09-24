@@ -13,7 +13,6 @@ while len(max_heap)>1:
         heapq.heappush(max_heap,-(s1-s2))
     
 
-    print(max_heap)
 
 if max_heap:
     print( -heapq.heappop(max_heap))
