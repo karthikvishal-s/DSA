@@ -1,20 +1,25 @@
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        stack = []
-        
+        # Use class variables to avoid scope issues
+        self.n = 0
+        self.result = None
+
         def travel(node):
-            # Base case: if we hit a null node, just bounce back up
-            if not node:
+            # Base case: if node is null OR we already found the result, stop exploring!
+            if not node or self.result is not None:
                 return
             
-            # 1. Go all the way LEFT
+            # 1. Go Left
             travel(node.left)
             
-            # 2. Process the CURRENT node
-            stack.append(node.val)
+            # 2. Process Current Node
+            self.n += 1 
+            if self.n == k:
+                self.result = node.val
+                return # Early exit for this branch
             
-            # 3. Go all the way RIGHT
+            # 3. Go Right
             travel(node.right)
 
         travel(root)
-        return stack[k-1]
+        return self.result
